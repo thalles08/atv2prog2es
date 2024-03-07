@@ -1,11 +1,9 @@
-import TelaCadastroCliente from "./componentes/telas/telaCadastroCliente";
-import Cabecalho from "./componentes/templates/cabecalho";
-import Menu from "./componentes/templates/menu";
+import TelaCadastroFuncionarios from "./componentes/telas/telaCadastroFuncionarios";
 
 function App() {
   return (
     <div className="App">
-      <TelaCadastroCliente />
+      <TelaCadastroFuncionarios />
     </div>
   );
 }

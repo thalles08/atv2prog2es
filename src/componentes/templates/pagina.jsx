@@ -1,14 +1,17 @@
 import Cabecalho from "./cabecalho";
 import Menu from "./menu";
+import Rodape from "./rodape";
+
 
 export default function Pagina(props) {
     return (
         <div>
-            <Cabecalho titulo="Sistema de Controle de Clientes"/>
+            <Cabecalho titulo="Sistema de Controle de Funcionários"/>
             <Menu />
             <div className="container">
                 {props.children}
             </div>
+            <Rodape titulo="Desenvolvido pelo aluno Thalles F. S. Souza para a disciplina Programação 2, Módulo 1 - UNOESTE" />
         </div>
     );
 }
