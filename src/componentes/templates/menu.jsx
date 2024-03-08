@@ -27,8 +27,10 @@ export default function Menu2 () {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Página Inicial</Nav.Link>
-                  <Nav.Link href="#action2">Cadastro de Funcionários</Nav.Link>
+                  <Nav.Link href="/">Página Inicial</Nav.Link>
+                  <Nav.Link href="/funcionarios">Cadastro de Funcionários</Nav.Link>
+                  <Nav.Link href="/produtos">Cadastro de Produtos</Nav.Link>
+                  <Nav.Link href="/fornecedores">Cadastro de Fornecedores</Nav.Link>
                   <NavDropdown
                     title="Departamentos"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
