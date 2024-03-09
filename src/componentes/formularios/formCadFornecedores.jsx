@@ -6,6 +6,22 @@ import Row from "react-bootstrap/Row";
 
 export default function FormCadFornecedores(props) {
     const [validated, setValidated] = useState(false);
+    const [fornecedor, setFornecedor] = useState({
+      cnpj: "",
+      razaoSocial: "",
+      nomeFantasia: "",
+      endereco: "",
+      telefone: "",
+      email: "",
+      nomeRepresentante: "",
+      telefoneRepresentante: "",
+      emailRepresentante: ""
+    });
+
+    function manipularMudanca(evento) {
+      const componente = evento.currentTarget;
+      setFornecedor({ ...fornecedor, [componente.name]: componente.value})
+    }
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
@@ -26,7 +42,10 @@ export default function FormCadFornecedores(props) {
             required
             type="text"
             placeholder="00.000.000/0000-00"
-            name="cnpjFornecedor"
+            value={fornecedor.cnpj}            
+            name="cnpj"
+            id="cnpj"
+            onChange={manipularMudanca}
           />
           <Form.Control.Feedback type="invalid">
             Informe o CNPJ do fornecedor.
@@ -38,7 +57,10 @@ export default function FormCadFornecedores(props) {
             required
             type="text"
             placeholder="Informe a razão social do fornecedor"
-            name="razaoSocialFornecedor"
+            value={fornecedor.razaoSocial}
+            name="razaoSocial"
+            id="razaoSocial"
+            onChange={manipularMudanca}
           />
           <Form.Control.Feedback type="invalid">
             Informe a Razão Social do forncedor.
@@ -50,7 +72,10 @@ export default function FormCadFornecedores(props) {
             required
             type="text"
             placeholder="Informe o nome fantasia do fornecedor"
-            name="nomeFantasiaFornecedor"
+            value={fornecedor.nomeFantasia}
+            name="nomeFantasia"
+            id="nomeFantasia"
+            onChange={manipularMudanca}
           />
           <Form.Control.Feedback type="invalid">
             Informe o Nome Fantasia do fornecedor.
@@ -63,7 +88,10 @@ export default function FormCadFornecedores(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe endereço, CEP, cidade e estado"
+          value={fornecedor.endereco}
           name="endereco"
+          id="endereco"
+          onChange={manipularMudanca}
           required />
           <Form.Control.Feedback type="invalid">
             Informe o endereço completo.
@@ -74,7 +102,10 @@ export default function FormCadFornecedores(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe o telefone"
-          name="telefone" 
+          value={fornecedor.telefone}
+          name="telefone"
+          id="telefone"
+          onChange={manipularMudanca}
           required />
           <Form.Control.Feedback type="invalid">
             Informe o telefone.
@@ -85,7 +116,10 @@ export default function FormCadFornecedores(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe o e-mail"
+          value={fornecedor.email}
           name="email"
+          id="email"
+          onChange={manipularMudanca}
           required />
           <Form.Control.Feedback type="invalid">
             Informe o e-mail.
@@ -98,7 +132,10 @@ export default function FormCadFornecedores(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe o nome do representante"
+          value={fornecedor.nomeRepresentante}
           name="nomeRepresentante"
+          id="nomeRepresentante"
+          onChange={manipularMudanca}
           required />
                     <Form.Control.Feedback type="invalid">
             Informe o nome do representante desse fornecedor.
@@ -109,7 +146,10 @@ export default function FormCadFornecedores(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe o telefone do representante"
-          name="telefoneRepresentante" 
+          value={fornecedor.telefoneRepresentante}
+          name="telefoneRepresentante"
+          id="telefoneRepresentante"
+          onChange={manipularMudanca}
           required />
           <Form.Control.Feedback type="invalid">
             Informe o telefone do representante desse fornecedor.
@@ -120,7 +160,10 @@ export default function FormCadFornecedores(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe o e-mail do representante"
+          value={fornecedor.emailRepresentante}
           name="emailRepresentante"
+          id="emailRepresentante"
+          onChange={manipularMudanca}
           required />
                     <Form.Control.Feedback type="invalid">
             Informe o e-mail do representante desse fornecedor.

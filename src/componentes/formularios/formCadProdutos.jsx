@@ -6,6 +6,21 @@ import Row from "react-bootstrap/Row";
 
 export default function FormCadProdutos(props) {
     const [validated, setValidated] = useState(false);
+    const [produto, setProduto] = useState({
+      codigoProduto: "",
+      descricaoProduto: "",
+      marcaProduto: "",
+      modeloProduto: "",
+      categoriaProduto: "",
+      precoCusto: "",
+      precoVenda: "",
+      fornecedor: ""
+    });
+
+    function manipularMudanca(evento) {
+      const componente = evento.currentTarget;
+      setProduto({ ...produto, [componente.name]: componente.value})
+    }
 
     const handleSubmit = (event) => {
         const form = event.currentTarget;
@@ -26,7 +41,10 @@ export default function FormCadProdutos(props) {
             required
             type="text"
             placeholder="Digite o código do produto"
+            value={produto.codigoProduto}
             name="codigoProduto"
+            id="codigoProduto"
+            onChange={manipularMudanca}
           />
           <Form.Control.Feedback type="invalid">
             Informe o código do produto.
@@ -38,7 +56,10 @@ export default function FormCadProdutos(props) {
             required
             type="text"
             placeholder="Insira a descrição do produto"
+            value={produto.descricaoProduto}
             name="descricaoProduto"
+            id="descricaoProduto"
+            onChange={manipularMudanca}
           />
           <Form.Control.Feedback type="invalid">
             Faça uma descrição do produto.
@@ -52,7 +73,10 @@ export default function FormCadProdutos(props) {
             required
             type="text"
             placeholder="Informe a marca do produto"
+            value={produto.marcaProduto}
             name="marcaProduto"
+            id="marcaProduto"
+            onChange={manipularMudanca}
           />
           <Form.Control.Feedback type="invalid">
             Informe a marca.
@@ -63,7 +87,10 @@ export default function FormCadProdutos(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe o modelo do produto"
+          value={produto.modeloProduto}
           name="modeloProduto"
+          id="modeloProduto"
+          onChange={manipularMudanca}
           required />
           <Form.Control.Feedback type="invalid">
             Informe o modelo.
@@ -74,7 +101,10 @@ export default function FormCadProdutos(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe a categoria do produto"
+          value={produto.categoriaProduto}
           name="categoriaProduto"
+          id="categoriaProduto"
+          onChange={manipularMudanca}
           required />
                     <Form.Control.Feedback type="invalid">
             Informe a categoria.
@@ -87,7 +117,10 @@ export default function FormCadProdutos(props) {
           <Form.Control 
           type="text" 
           placeholder="R$"
+          value={produto.precoCusto}
           name="precoCusto"
+          id="precoCusto"
+          onChange={manipularMudanca}
           required />
           <Form.Control.Feedback type="invalid">
             Informe o preço de custo.
@@ -98,7 +131,10 @@ export default function FormCadProdutos(props) {
           <Form.Control 
           type="text" 
           placeholder="R$"
-          name="precoVenda" 
+          value={produto.precoVenda}
+          name="precoVenda"
+          id="precoVenda"
+          onChange={manipularMudanca}
           required />
             <Form.Control.Feedback type="invalid">
             Informe o preço de venda.
@@ -109,7 +145,10 @@ export default function FormCadProdutos(props) {
           <Form.Control 
           type="text" 
           placeholder="Informe o fornecedor"
+          value={produto.fornecedor}
           name="fornecedor"
+          id="fornecedor"
+          onChange={manipularMudanca}
           required />
           <Form.Control.Feedback type="invalid">
             Informe qual é o fornecedor.
