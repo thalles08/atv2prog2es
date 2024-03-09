@@ -28,7 +28,9 @@ export default function FormCadFuncionarios(props) {
             placeholder="Insira o nome"
             name="nome"
           />
-          <Form.Control.Feedback>Correto!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Informe o nome.
+          </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4" controlId="validationCustom02">
           <Form.Label>Data de nascimento</Form.Label>
@@ -38,9 +40,11 @@ export default function FormCadFuncionarios(props) {
             placeholder="00/00/0000"
             name="dataNascimento"
           />
-          <Form.Control.Feedback>Correto!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Informe a data de nascimento.
+          </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
+        <Form.Group as={Col} md="4" controlId="validationCustom03">
           <Form.Label>CPF</Form.Label>
           <Form.Control
             required
@@ -48,11 +52,13 @@ export default function FormCadFuncionarios(props) {
             placeholder="000.000.000-00"
             name="cpf"
           />
-          <Form.Control.Feedback>Correto!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Informe o CPF.
+          </Form.Control.Feedback>
         </Form.Group>
       </Row>
       <Row className="mb-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
+        <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Endereço completo</Form.Label>
           <Form.Control 
           type="text" 
@@ -63,7 +69,7 @@ export default function FormCadFuncionarios(props) {
             Informe o endereço completo.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom04">
+        <Form.Group as={Col} md="3" controlId="validationCustom05">
           <Form.Label>Telefone</Form.Label>
           <Form.Control 
           type="text" 
@@ -71,10 +77,10 @@ export default function FormCadFuncionarios(props) {
           name="telefone" 
           required />
           <Form.Control.Feedback type="invalid">
-            Informe o telefone
+            Informe o telefone.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom05">
+        <Form.Group as={Col} md="3" controlId="validationCustom06">
           <Form.Label>E-mail</Form.Label>
           <Form.Control 
           type="text" 
@@ -82,7 +88,7 @@ export default function FormCadFuncionarios(props) {
           name="email"
           required />
           <Form.Control.Feedback type="invalid">
-            informe o e-mail.
+            Informe o e-mail.
           </Form.Control.Feedback>
         </Form.Group>
       </Row>

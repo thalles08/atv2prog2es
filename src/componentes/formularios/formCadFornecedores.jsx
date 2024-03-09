@@ -20,39 +20,45 @@ export default function FormCadFornecedores(props) {
   return (
     <Form noValidate validated={validated} onSubmit={handleSubmit}>
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Nome</Form.Label>
+        <Form.Group as={Col} md="2" controlId="validationCustom01">
+          <Form.Label>CNPJ</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="Insira o nome"
-            name="nome"
+            placeholder="00.000.000/0000-00"
+            name="cnpjFornecedor"
           />
-          <Form.Control.Feedback>Correto!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Informe o CNPJ do fornecedor.
+          </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>Data de nascimento</Form.Label>
+        <Form.Group as={Col} md="5" controlId="validationCustom02">
+          <Form.Label>Razão Social</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="00/00/0000"
-            name="dataNascimento"
+            placeholder="Informe a razão social do fornecedor"
+            name="razaoSocialFornecedor"
           />
-          <Form.Control.Feedback>Correto!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Informe a Razão Social do forncedor.
+          </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
-          <Form.Label>CPF</Form.Label>
+        <Form.Group as={Col} md="5" controlId="validationCustom03">
+          <Form.Label>Nome Fantasia</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="000.000.000-00"
-            name="cpf"
+            placeholder="Informe o nome fantasia do fornecedor"
+            name="nomeFantasiaFornecedor"
           />
-          <Form.Control.Feedback>Correto!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">
+            Informe o Nome Fantasia do fornecedor.
+          </Form.Control.Feedback>
         </Form.Group>
       </Row>
       <Row className="mb-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
+        <Form.Group as={Col} md="6" controlId="validationCustom04">
           <Form.Label>Endereço completo</Form.Label>
           <Form.Control 
           type="text" 
@@ -63,7 +69,7 @@ export default function FormCadFornecedores(props) {
             Informe o endereço completo.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom04">
+        <Form.Group as={Col} md="3" controlId="validationCustom05">
           <Form.Label>Telefone</Form.Label>
           <Form.Control 
           type="text" 
@@ -71,10 +77,10 @@ export default function FormCadFornecedores(props) {
           name="telefone" 
           required />
           <Form.Control.Feedback type="invalid">
-            Informe o telefone
+            Informe o telefone.
           </Form.Control.Feedback>
         </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom05">
+        <Form.Group as={Col} md="3" controlId="validationCustom06">
           <Form.Label>E-mail</Form.Label>
           <Form.Control 
           type="text" 
@@ -82,7 +88,42 @@ export default function FormCadFornecedores(props) {
           name="email"
           required />
           <Form.Control.Feedback type="invalid">
-            informe o e-mail.
+            Informe o e-mail.
+          </Form.Control.Feedback>
+        </Form.Group>
+      </Row>
+      <Row className="mb-3">
+        <Form.Group as={Col} md="6" controlId="validationCustom07">
+          <Form.Label>Nome do representante</Form.Label>
+          <Form.Control 
+          type="text" 
+          placeholder="Informe o nome do representante"
+          name="nomeRepresentante"
+          required />
+                    <Form.Control.Feedback type="invalid">
+            Informe o nome do representante desse fornecedor.
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="3" controlId="validationCustom08">
+          <Form.Label>Telefone do representante</Form.Label>
+          <Form.Control 
+          type="text" 
+          placeholder="Informe o telefone do representante"
+          name="telefoneRepresentante" 
+          required />
+          <Form.Control.Feedback type="invalid">
+            Informe o telefone do representante desse fornecedor.
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="3" controlId="validationCustom09">
+          <Form.Label>E-mail do representante</Form.Label>
+          <Form.Control 
+          type="text" 
+          placeholder="Informe o e-mail do representante"
+          name="emailRepresentante"
+          required />
+                    <Form.Control.Feedback type="invalid">
+            Informe o e-mail do representante desse fornecedor.
           </Form.Control.Feedback>
         </Form.Group>
       </Row>
