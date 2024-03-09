@@ -42,7 +42,7 @@ export default function FormCadFornecedores(props) {
             required
             type="text"
             placeholder="00.000.000/0000-00"
-            value={fornecedor.cnpj}            
+            value={fornecedor.cnpj}
             name="cnpj"
             id="cnpj"
             onChange={manipularMudanca}
