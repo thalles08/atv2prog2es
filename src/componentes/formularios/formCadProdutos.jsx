@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
 export default function FormCadProdutos(props) {
-    const [validated, setValidated] = useState(false);
+    const [validado, setValidado] = useState(false);
     const [produto, setProduto] = useState({
       codigoProduto: "",
       descricaoProduto: "",
@@ -22,18 +22,20 @@ export default function FormCadProdutos(props) {
       setProduto({ ...produto, [componente.name]: componente.value})
     }
 
-    const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-    
-        setValidated(true);
-      };
+    function manipularSubmissao (evento) {
+      evento.preventDefault();
+      evento.stopPropagation();
+      const form = evento.currentTarget;
+      if (form.checkValidity() === false) {
+        setValidado(false);
+      }
+      else {
+        setValidado(true);
+      }
+    };
       
   return (
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form noValidate validated={validado} onSubmit={manipularSubmissao}>
       <Row className="mb-3">
         <Form.Group as={Col} md="3" controlId="validationCustom01">
           <Form.Label>Código do produto</Form.Label>
